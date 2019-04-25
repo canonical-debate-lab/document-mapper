@@ -1,0 +1,14 @@
+type: graph
+action: create
+name: argument_map
+edgedefinitions:
+   - collection: arguments
+     from: 
+         - statements
+     to:
+         - statements
+   - collection: references
+     from: 
+         - statements
+     to:
+         - sources

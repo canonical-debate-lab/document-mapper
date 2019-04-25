@@ -1,0 +1,6 @@
+type: database
+action: create
+name: document_mapper
+allowed:
+  - username: ${username}
+    password: ${password}

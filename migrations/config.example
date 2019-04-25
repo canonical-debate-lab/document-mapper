@@ -1,0 +1,10 @@
+endpoints:
+   - http://localhost:8529
+username: root
+password: 
+migrationspath: /path/to/document-mapper/migrations
+db: document_mapper
+extras:
+  {username: myuser,
+   password: mypassword}
+   
