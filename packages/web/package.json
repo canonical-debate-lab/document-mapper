@@ -1,0 +1,53 @@
+{
+  "name": "@canonical/web",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@types/jest": "24.0.12",
+    "@types/node": "11.13.8",
+    "@types/react": "16.8.15",
+    "@types/react-dom": "16.8.4",
+    "@types/react-router-dom": "4.3.2",
+    "apollo-boost": "^0.3.1",
+    "apollo-link-context": "^1.0.17",
+    "apollo-link-error": "^1.1.10",
+    "cookie": "^0.3.1",
+    "evergreen-ui": "^4.15.0",
+    "formik": "^1.5.4",
+    "graphql": "^14.2.1",
+    "graphql-tag": "^2.10.1",
+    "history": "^4.9.0",
+    "lodash.get": "4.4.2",
+    "react": "^16.8.6",
+    "react-apollo": "^2.5.5",
+    "react-apollo-hooks": "^0.4.5",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.0",
+    "styled-components": "^4.2.0",
+    "typescript": "3.4.5"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@canonical/server",
+  "description": "graphql-api",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "nodemon -e ts,graphql -x ts-node index.ts",
+    "start": "NODE_ENV=production ts-node index.ts",
+    "type-check": "tsc"
+  },
+  "dependencies": {
+    "apollo-server": "^2.4.8",
+    "graphql": "^14.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "node-fetch": "^2.5.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^8.3.2",
+    "graphql-cli": "^3.0.11",
+    "nodemon": "^1.19.0",
+    "ts-node": "8.1.0"
+  }
+}

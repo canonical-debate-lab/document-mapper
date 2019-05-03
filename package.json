@@ -1,53 +1,61 @@
 {
-  "name": "document-mapper",
-  "version": "0.1.0",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "name": "canonical",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/styled-components",
+      "**/styled-components/**"
+    ]
   },
-  "dependencies": {
-    "@types/jest": "24.0.12",
-    "@types/node": "11.13.8",
-    "@types/react": "16.8.15",
-    "@types/react-dom": "16.8.4",
-    "@types/react-router-dom": "4.3.2",
-    "apollo-boost": "^0.3.1",
-    "apollo-link-context": "^1.0.17",
-    "apollo-link-error": "^1.1.10",
-    "cookie": "^0.3.1",
-    "evergreen-ui": "^4.15.0",
-    "formik": "^1.5.4",
-    "graphql": "^14.2.1",
-    "graphql-tag": "^2.10.1",
-    "history": "^4.9.0",
-    "lodash.get": "4.4.2",
-    "react": "^16.8.6",
-    "react-apollo": "^2.5.5",
-    "react-apollo-hooks": "^0.4.5",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.0",
-    "styled-components": "^4.2.0",
-    "typescript": "3.4.5"
+  "scripts": {
+    "server": "yarn workspace @canonical/server start",
+    "web": "yarn workspace @canonical/web start",
+    "dev:web": "concurrently -n web,server --kill-others \"yarn web\" \"yarn server\"",
+    "test:web": "yarn workspace @canonical/web test",
+    "test:server": "yarn workspace @canonical/server test",
+    "precommit": "yarn lint-staged"
   },
   "devDependencies": {
-    "cross-env": "^5.2.0"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@types/dotenv": "^6.1.1",
+    "@types/graphql": "^14.0.4",
+    "@types/jest": "^24.0.11",
+    "@types/react": "^16.8.13",
+    "@types/react-test-renderer": "^16.8.1",
+    "@types/styled-components": "4.1.14",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/parser": "^1.7.0",
+    "concurrently": "^4.1.0",
+    "eslint": "5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-config-react-app": "4.0.0",
+    "husky": "^2.2.0",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.17.0",
+    "typescript": "^3.4.5"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix --ext js,ts",
+      "prettier --write",
+      "git add"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+    "*.{jsx,tsx,json}|*rc|*config": [
+      "prettier --write",
+      "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn precommit"
+    }
   }
 }
